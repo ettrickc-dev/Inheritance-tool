@@ -3,72 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free NY Inheritance Rights Tool | Easy Legal Filing</title>
+  <title>Free NY Inheritance Rights Tool | EasyLegalFiling</title>
   <meta name="description" content="Find out if you may have inheritance rights in New York. Free tool. Probate, administration, small estate, and claim-your-share routing." />
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="theme-color" content="#4b2aad" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
  
   <style>
+    /* ─────────────────────────────────────
+       TOKENS
+    ───────────────────────────────────── */
     :root {
-      --ink:       #0d1117;
-      --ink2:      #1a2332;
-      --cream:     #faf8f4;
-      --warm:      #f3efe8;
-      --border:    #e4ddd4;
-      --muted:     #7a7265;
-      --red:       #b91c1c;
-      --red2:      #dc2626;
-      --red-bg:    #fff1f1;
-      --red-border:#fecaca;
-      --gold:      #c8940a;
-      --gold-bg:   #fffbeb;
-      --gold-bdr:  #fde68a;
-      --green:     #166534;
-      --green-bg:  #f0fdf4;
-      --green-bdr: #86efac;
-      --white:     #ffffff;
-      --shadow-sm: 0 2px 8px rgba(13,17,23,.06);
-      --shadow-md: 0 8px 28px rgba(13,17,23,.10);
-      --shadow-lg: 0 20px 60px rgba(13,17,23,.14);
-      --r:         16px;
+      --purple:      #4b2aad;
+      --purple-dk:   #3a1f8a;
+      --purple-lt:   #6447c7;
+      --purple-pale: #ede9ff;
+      --teal:        #00857a;
+      --teal-lt:     #ccfbf1;
+      --amber:       #f59e0b;
+      --amber-pale:  #fef3c7;
+      --red:         #c0392b;
+      --red-lt:      #fee2e2;
+      --green:       #15803d;
+      --green-lt:    #dcfce7;
+      --navy:        #0f1b2d;
+      --white:       #ffffff;
+      --gray-50:     #f9fafb;
+      --gray-100:    #f3f4f6;
+      --gray-200:    #e5e7eb;
+      --gray-300:    #d1d5db;
+      --gray-400:    #9ca3af;
+      --gray-500:    #6b7280;
+      --gray-600:    #4b5563;
+      --gray-800:    #1f2937;
+      --radius-sm:   6px;
+      --radius:      10px;
+      --radius-lg:   16px;
+      --radius-xl:   22px;
+      --shadow-sm:   0 1px 4px rgba(0,0,0,.07);
+      --shadow:      0 4px 16px rgba(0,0,0,.10);
+      --shadow-lg:   0 12px 40px rgba(0,0,0,.14);
+      --t:           0.18s ease;
     }
  
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
  
     body {
-      font-family: 'Figtree', sans-serif;
-      background: var(--cream);
-      color: var(--ink);
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-800);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
  
-    /* ─── ANNOUNCEMENT BAR ─── */
-    .ann-bar {
-      background: var(--red);
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+ 
+    /* ─────────────────────────────────────
+       PROMO BAR
+    ───────────────────────────────────── */
+    .promo-bar {
+      background: var(--purple);
       color: #fff;
       text-align: center;
       padding: 10px 16px;
       font-size: 13px;
-      font-weight: 700;
-      letter-spacing: .2px;
+      font-weight: 600;
+      letter-spacing: .1px;
     }
-    .ann-bar a { color: #fecaca; text-decoration: underline; margin-left: 6px; }
+    .promo-bar a {
+      color: #c4b5fd;
+      text-decoration: underline;
+      margin-left: 6px;
+      font-weight: 700;
+    }
  
-    /* ─── HEADER ─── */
+    /* ─────────────────────────────────────
+       HEADER
+    ───────────────────────────────────── */
     .site-header {
-      background: var(--ink);
-      border-bottom: 1px solid rgba(255,255,255,.07);
-      padding: 14px 0;
+      background: #fff;
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 900;
     }
     .header-inner {
       max-width: 1100px;
       margin: auto;
-      padding: 0 24px;
+      padding: 14px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -81,65 +108,74 @@
       text-decoration: none;
     }
     .brand img {
-      height: 44px;
-      border-radius: 10px;
-      background: #fff;
-      padding: 5px;
-      object-fit: contain;
+      height: 46px;
+      width: auto;
     }
     .brand-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: #fff;
+      font-family: 'Merriweather', serif;
+      font-size: 19px;
+      font-weight: 900;
+      color: var(--purple);
       line-height: 1.1;
     }
     .brand-tag {
       font-size: 11px;
-      color: rgba(255,255,255,.4);
-      letter-spacing: .8px;
-      text-transform: uppercase;
-    }
-    .header-badge {
-      background: rgba(200,148,10,.15);
-      border: 1px solid rgba(200,148,10,.3);
-      color: #fbbf24;
-      font-size: 11px;
-      font-weight: 700;
+      color: var(--gray-400);
       letter-spacing: .5px;
       text-transform: uppercase;
-      padding: 5px 12px;
+      font-weight: 600;
+    }
+    .header-chips {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .hchip {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gray-600);
+      background: var(--gray-100);
       border-radius: 20px;
+      padding: 5px 11px;
+      white-space: nowrap;
+    }
+    @media (max-width: 640px) {
+      .header-chips { display: none; }
+      .brand-tag { display: none; }
     }
  
-    /* ─── HERO ─── */
+    /* ─────────────────────────────────────
+       HERO
+    ───────────────────────────────────── */
     .hero {
-      background: linear-gradient(140deg, var(--ink) 0%, #1a1008 55%, #3b0a0a 100%);
-      color: #fff;
-      padding: 64px 24px 56px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--purple-dk) 60%, #0a1f3a 100%);
+      padding: 56px 24px 48px;
       position: relative;
       overflow: hidden;
     }
     .hero::before {
       content: '';
       position: absolute;
-      top: -120px; right: -80px;
-      width: 500px; height: 500px;
+      top: -100px; right: -80px;
+      width: 480px; height: 480px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(200,148,10,.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(100,71,199,.25) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero::after {
       content: '';
       position: absolute;
-      bottom: -60px; left: -40px;
-      width: 360px; height: 360px;
+      bottom: -50px; left: -40px;
+      width: 340px; height: 340px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(185,28,28,.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(75,42,173,.18) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero-inner {
-      max-width: 820px;
+      max-width: 760px;
       margin: auto;
       position: relative;
       z-index: 1;
@@ -147,67 +183,70 @@
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(200,148,10,.15);
-      border: 1px solid rgba(200,148,10,.25);
-      color: #fbbf24;
+      gap: 7px;
+      background: rgba(196,181,253,.18);
+      border: 1px solid rgba(196,181,253,.3);
+      color: #c4b5fd;
       font-size: 12px;
       font-weight: 700;
       letter-spacing: .8px;
       text-transform: uppercase;
-      padding: 6px 14px;
+      padding: 5px 14px;
       border-radius: 20px;
-      margin-bottom: 20px;
-    }
-    .hero-eyebrow::before {
-      content: '⚖️';
+      margin-bottom: 18px;
     }
     .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      font-weight: 700;
-      line-height: 1.1;
+      font-family: 'Merriweather', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.15;
       color: #fff;
-      margin-bottom: 16px;
-      letter-spacing: -.02em;
+      margin-bottom: 14px;
+      letter-spacing: -.01em;
     }
     .hero h1 em {
       font-style: normal;
-      color: #fbbf24;
+      color: #c4b5fd;
     }
     .hero-sub {
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       color: rgba(255,255,255,.72);
-      max-width: 660px;
+      max-width: 640px;
       line-height: 1.75;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
-    .hero-stats {
+    .hero-pills {
       display: flex;
-      gap: 28px;
       flex-wrap: wrap;
+      gap: 10px;
     }
-    .stat {
+    .hero-pill {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      color: rgba(255,255,255,.6);
-      font-weight: 500;
+      gap: 6px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.15);
+      color: rgba(255,255,255,.75);
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 5px 13px;
+      border-radius: 20px;
     }
-    .stat-dot {
+    .hero-pill-dot {
       width: 6px; height: 6px;
       border-radius: 50%;
-      background: #fbbf24;
+      background: #c4b5fd;
       flex-shrink: 0;
     }
  
-    /* ─── TRUST STRIP ─── */
+    /* ─────────────────────────────────────
+       TRUST STRIP
+    ───────────────────────────────────── */
     .trust-strip {
-      background: var(--gold-bg);
-      border-top: 1px solid var(--gold-bdr);
-      border-bottom: 1px solid var(--gold-bdr);
-      padding: 14px 24px;
+      background: var(--amber-pale);
+      border-top: 1px solid #fde68a;
+      border-bottom: 1px solid #fde68a;
+      padding: 13px 24px;
     }
     .trust-inner {
       max-width: 1100px;
@@ -215,82 +254,94 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 32px;
+      gap: 28px;
       flex-wrap: wrap;
     }
     .trust-item {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       color: #92400e;
     }
  
-    /* ─── LAYOUT ─── */
+    /* ─────────────────────────────────────
+       PAGE LAYOUT
+    ───────────────────────────────────── */
     .page-body {
       max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 24px 80px;
+      margin: 36px auto 80px;
+      padding: 0 24px;
       display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: 28px;
+      grid-template-columns: 1fr 320px;
+      gap: 24px;
       align-items: start;
     }
+    @media (max-width: 960px) {
+      .page-body { grid-template-columns: 1fr; }
+      .sidebar { order: -1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    }
+    @media (max-width: 600px) {
+      .sidebar { grid-template-columns: 1fr; }
+    }
  
-    /* ─── FORM CARD ─── */
+    /* ─────────────────────────────────────
+       FORM CARD
+    ───────────────────────────────────── */
     .form-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      box-shadow: var(--shadow-md);
+      background: #fff;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
       overflow: hidden;
     }
     .form-card-head {
-      background: linear-gradient(135deg, #0d1117 0%, #1a2332 100%);
-      padding: 28px 32px;
-      border-bottom: 1px solid rgba(255,255,255,.06);
+      background: var(--navy);
+      padding: 26px 30px;
+      border-bottom: 1px solid rgba(255,255,255,.07);
     }
-    .form-card-head h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.9rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 6px;
-      letter-spacing: -.02em;
-    }
-    .form-card-head p {
-      font-size: .9rem;
-      color: rgba(255,255,255,.55);
-      line-height: 1.6;
-    }
-    .step-badge {
+    .step-label {
       display: inline-block;
-      background: rgba(200,148,10,.2);
-      border: 1px solid rgba(200,148,10,.3);
-      color: #fbbf24;
+      background: rgba(196,181,253,.2);
+      border: 1px solid rgba(196,181,253,.3);
+      color: #c4b5fd;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: .8px;
       text-transform: uppercase;
       padding: 4px 10px;
-      border-radius: 12px;
+      border-radius: 10px;
       margin-bottom: 10px;
     }
-    .form-body {
-      padding: 32px;
+    .form-card-head h2 {
+      font-family: 'Merriweather', serif;
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+    .form-card-head p {
+      font-size: .88rem;
+      color: rgba(255,255,255,.52);
+      line-height: 1.65;
     }
  
-    /* ─── QUESTION GROUPS ─── */
+    /* ─────────────────────────────────────
+       QUESTIONS
+    ───────────────────────────────────── */
+    .form-body { padding: 28px 30px; }
+ 
     .q-group {
-      margin-bottom: 28px;
-      padding-bottom: 28px;
-      border-bottom: 1px solid var(--border);
-      animation: fadeUp .35s ease both;
+      margin-bottom: 26px;
+      padding-bottom: 26px;
+      border-bottom: 1px solid var(--gray-200);
+      animation: fadeUp .3s ease both;
     }
     .q-group:last-of-type { border-bottom: none; margin-bottom: 0; }
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
+      from { opacity: 0; transform: translateY(10px); }
       to   { opacity: 1; transform: translateY(0); }
     }
  
@@ -299,33 +350,37 @@
       font-weight: 800;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 6px;
+      color: var(--purple);
+      margin-bottom: 5px;
     }
     .q-label {
-      font-size: 1rem;
+      font-size: .97rem;
       font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 14px;
-      line-height: 1.4;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.45;
     }
     .q-helper {
-      font-size: .82rem;
-      color: var(--muted);
-      margin-top: -8px;
-      margin-bottom: 14px;
-      line-height: 1.55;
+      font-size: .8rem;
+      color: var(--gray-500);
+      margin-top: -6px;
+      margin-bottom: 12px;
+      line-height: 1.6;
     }
  
-    /* ─── RADIO OPTIONS ─── */
+    /* Radio grid */
     .radio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
       gap: 8px;
     }
     .radio-grid.two   { grid-template-columns: repeat(2, 1fr); }
     .radio-grid.three { grid-template-columns: repeat(3, 1fr); }
     .radio-grid.four  { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 500px) {
+      .radio-grid.four  { grid-template-columns: 1fr 1fr; }
+      .radio-grid.three { grid-template-columns: 1fr 1fr; }
+    }
  
     .opt-label {
       position: relative;
@@ -345,122 +400,131 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      min-height: 52px;
-      padding: 10px 12px;
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
-      font-size: .88rem;
+      min-height: 50px;
+      padding: 9px 11px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius);
+      font-size: .85rem;
       font-weight: 600;
-      color: var(--ink);
-      background: var(--white);
-      transition: all .18s cubic-bezier(.4,0,.2,1);
+      color: var(--gray-800);
+      background: #fff;
+      transition: all var(--t);
       line-height: 1.3;
     }
     .opt-label:hover .opt-face {
-      border-color: #9ca3af;
-      background: var(--warm);
+      border-color: var(--purple);
+      background: var(--purple-pale);
+      color: var(--purple-dk);
     }
     .opt-label input:checked + .opt-face {
-      border-color: var(--ink);
-      background: var(--ink);
+      border-color: var(--purple);
+      background: var(--purple);
       color: #fff;
-      box-shadow: 0 6px 18px rgba(13,17,23,.22);
+      box-shadow: 0 4px 14px rgba(75,42,173,.28);
       transform: translateY(-1px);
     }
  
-    /* ─── SELECT & INPUTS ─── */
+    /* Selects & inputs */
     .styled-select,
     .styled-input,
     .styled-textarea {
       width: 100%;
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius);
       padding: 13px 16px;
-      font-family: 'Figtree', sans-serif;
-      font-size: .95rem;
-      color: var(--ink);
-      background: var(--white);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: .93rem;
+      color: var(--gray-800);
+      background: #fff;
       outline: none;
-      transition: border-color .2s, box-shadow .2s;
+      transition: border-color var(--t), box-shadow var(--t);
       appearance: none;
+      -webkit-appearance: none;
     }
-    .styled-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%237a7265' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+    .styled-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+    }
     .styled-select:focus,
     .styled-input:focus,
     .styled-textarea:focus {
-      border-color: var(--ink);
-      box-shadow: 0 0 0 4px rgba(13,17,23,.07);
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px rgba(75,42,173,.1);
     }
-    .styled-textarea { min-height: 90px; resize: vertical; }
+    .styled-textarea { min-height: 88px; resize: vertical; }
  
-    /* ─── SUBMIT BUTTON ─── */
+    /* ─────────────────────────────────────
+       SUBMIT AREA
+    ───────────────────────────────────── */
     .submit-wrap {
-      padding: 24px 32px 32px;
-      background: var(--warm);
-      border-top: 1px solid var(--border);
+      padding: 22px 30px 28px;
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
     }
     .btn-submit {
       width: 100%;
-      background: linear-gradient(135deg, var(--red) 0%, var(--red2) 100%);
+      background: var(--purple);
       color: #fff;
       border: none;
-      border-radius: 14px;
-      padding: 18px 24px;
-      font-family: 'Figtree', sans-serif;
+      border-radius: var(--radius);
+      padding: 17px 24px;
+      font-family: 'Source Sans 3', sans-serif;
       font-size: 1rem;
       font-weight: 800;
       cursor: pointer;
-      box-shadow: 0 10px 30px rgba(185,28,28,.3);
-      transition: transform .18s, box-shadow .18s;
+      box-shadow: 0 8px 24px rgba(75,42,173,.32);
+      transition: background var(--t), transform var(--t), box-shadow var(--t);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       letter-spacing: .2px;
     }
     .btn-submit:hover {
+      background: var(--purple-lt);
       transform: translateY(-2px);
-      box-shadow: 0 16px 40px rgba(185,28,28,.38);
+      box-shadow: 0 14px 32px rgba(75,42,173,.40);
     }
     .btn-reset {
       width: 100%;
       background: transparent;
-      border: 1.5px solid var(--border);
-      border-radius: 14px;
-      padding: 13px 24px;
-      font-family: 'Figtree', sans-serif;
-      font-size: .9rem;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 12px 24px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: .88rem;
       font-weight: 600;
-      color: var(--muted);
+      color: var(--gray-500);
       cursor: pointer;
       margin-top: 10px;
-      transition: border-color .18s, color .18s;
+      transition: border-color var(--t), color var(--t);
     }
-    .btn-reset:hover { border-color: var(--ink); color: var(--ink); }
+    .btn-reset:hover { border-color: var(--purple); color: var(--purple); }
     .submit-note {
       text-align: center;
-      font-size: .78rem;
-      color: var(--muted);
+      font-size: .75rem;
+      color: var(--gray-400);
       margin-top: 12px;
-      line-height: 1.6;
+      line-height: 1.65;
     }
  
-    /* ─── RESULT ─── */
-    .result-section {
-      display: none;
-      margin-top: 32px;
-    }
+    /* ─────────────────────────────────────
+       RESULT
+    ───────────────────────────────────── */
+    .result-section { display: none; margin-top: 28px; }
     .result-section.show { display: block; }
  
     .result-card {
-      border: 1px solid var(--border);
-      border-radius: 24px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-xl);
       overflow: hidden;
       box-shadow: var(--shadow-lg);
     }
     .result-head {
-      background: linear-gradient(140deg, var(--ink) 0%, #1a1008 55%, #3b0a0a 100%);
-      padding: 32px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--purple-dk) 100%);
+      padding: 30px 32px;
       color: #fff;
       position: relative;
       overflow: hidden;
@@ -471,297 +535,290 @@
       top: -40px; right: -40px;
       width: 200px; height: 200px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(200,148,10,.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(196,181,253,.18) 0%, transparent 70%);
     }
-    .result-head-label {
+    .result-eyebrow {
       font-size: 11px;
       font-weight: 800;
       letter-spacing: 1.2px;
       text-transform: uppercase;
-      color: #fbbf24;
-      margin-bottom: 10px;
+      color: #c4b5fd;
+      margin-bottom: 9px;
       position: relative;
     }
     .result-head h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.7rem, 4vw, 2.5rem);
-      font-weight: 700;
+      font-family: 'Merriweather', serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: 900;
       margin-bottom: 8px;
-      line-height: 1.15;
-      letter-spacing: -.02em;
+      line-height: 1.2;
       position: relative;
     }
-    .result-head-sub {
-      font-size: .95rem;
-      color: rgba(255,255,255,.7);
-      line-height: 1.6;
-      position: relative;
-    }
- 
-    .result-body { background: var(--white); padding: 28px 32px; }
- 
-    .alert-box {
-      border-radius: 14px;
-      padding: 14px 18px;
+    .result-subtitle {
       font-size: .92rem;
+      color: rgba(255,255,255,.68);
+      line-height: 1.65;
+      position: relative;
+    }
+    .result-body { background: #fff; padding: 26px 30px; }
+ 
+    /* Alert boxes */
+    .alert-box {
+      border-radius: var(--radius);
+      padding: 13px 16px;
+      font-size: .9rem;
       font-weight: 600;
       line-height: 1.6;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       display: flex;
       gap: 10px;
       align-items: flex-start;
     }
-    .alert-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-    .alert-box.danger  { background: var(--red-bg); border: 1px solid var(--red-border); color: #991b1b; }
-    .alert-box.warn    { background: var(--gold-bg); border: 1px solid var(--gold-bdr); color: #92400e; }
-    .alert-box.success { background: var(--green-bg); border: 1px solid var(--green-bdr); color: var(--green); }
+    .alert-icon { font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+    .alert-box.danger  { background: var(--red-lt);   border: 1px solid #fca5a5; color: #991b1b; }
+    .alert-box.warn    { background: var(--amber-pale); border: 1px solid #fde68a; color: #92400e; }
+    .alert-box.success { background: var(--green-lt); border: 1px solid #86efac; color: #166534; }
     .hidden { display: none !important; }
  
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 18px 0;
-    }
+    /* Pill tags */
+    .pill-row { display: flex; flex-wrap: wrap; gap: 7px; margin: 16px 0; }
     .pill {
-      background: var(--warm);
-      border: 1px solid var(--border);
-      color: var(--ink);
-      font-size: .78rem;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      color: var(--gray-800);
+      font-size: .76rem;
       font-weight: 700;
-      letter-spacing: .3px;
-      padding: 5px 12px;
+      letter-spacing: .2px;
+      padding: 4px 11px;
       border-radius: 20px;
     }
-    .pill.red { background: var(--red-bg); border-color: var(--red-border); color: var(--red); }
+    .pill.red { background: var(--red-lt); border-color: #fca5a5; color: #991b1b; }
  
+    /* Insight grid */
     .insight-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin: 20px 0;
+      gap: 14px;
+      margin: 18px 0;
     }
+    @media (max-width: 560px) { .insight-grid { grid-template-columns: 1fr; } }
     .insight-box {
-      background: var(--warm);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 20px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 18px;
     }
     .insight-box h4 {
-      font-size: .82rem;
+      font-size: .75rem;
       font-weight: 800;
-      letter-spacing: .6px;
+      letter-spacing: .7px;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 12px;
+      color: var(--gray-400);
+      margin-bottom: 11px;
     }
-    .insight-box ul {
-      padding-left: 16px;
-      margin: 0;
-    }
+    .insight-box ul { padding-left: 16px; margin: 0; }
     .insight-box li {
-      font-size: .88rem;
-      color: #374151;
+      font-size: .86rem;
+      color: var(--gray-600);
       margin-bottom: 7px;
       line-height: 1.55;
     }
     .insight-box li:last-child { margin-bottom: 0; }
  
-    /* ─── CTA PANEL ─── */
+    /* CTA panel inside result */
     .cta-panel {
-      background: linear-gradient(160deg, #fff 0%, var(--red-bg) 100%);
-      border: 1.5px solid var(--red-border);
-      border-radius: 20px;
-      padding: 28px;
-      margin-top: 8px;
+      background: linear-gradient(160deg, #fff 0%, var(--purple-pale) 100%);
+      border: 1.5px solid #c4b5fd;
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      margin-top: 6px;
     }
     .cta-panel-eyebrow {
       font-size: 11px;
       font-weight: 800;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 8px;
+      color: var(--purple);
+      margin-bottom: 7px;
     }
     .cta-panel h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.7rem;
-      font-weight: 700;
-      color: var(--ink);
+      font-family: 'Merriweather', serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--navy);
       margin-bottom: 8px;
-      line-height: 1.2;
+      line-height: 1.25;
     }
     .cta-panel p {
-      font-size: .9rem;
-      color: #4b5563;
-      margin-bottom: 20px;
+      font-size: .88rem;
+      color: var(--gray-600);
+      margin-bottom: 18px;
       line-height: 1.65;
     }
     .cta-buttons {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 11px;
     }
+    @media (max-width: 500px) { .cta-buttons { grid-template-columns: 1fr; } }
     .cta-btn {
       display: block;
       text-decoration: none;
-      border-radius: 14px;
-      padding: 18px 16px;
-      font-family: 'Figtree', sans-serif;
+      border-radius: var(--radius);
+      padding: 16px 14px;
+      font-family: 'Source Sans 3', sans-serif;
       font-weight: 800;
-      font-size: .95rem;
+      font-size: .93rem;
       text-align: center;
-      transition: transform .18s, box-shadow .18s;
+      transition: transform var(--t), box-shadow var(--t), opacity var(--t);
       line-height: 1.3;
     }
     .cta-btn:hover { transform: translateY(-2px); }
     .cta-btn.primary {
-      background: linear-gradient(135deg, var(--red) 0%, var(--red2) 100%);
+      background: var(--purple);
       color: #fff;
-      box-shadow: 0 10px 30px rgba(185,28,28,.28);
+      box-shadow: 0 8px 24px rgba(75,42,173,.28);
     }
-    .cta-btn.primary:hover { box-shadow: 0 16px 40px rgba(185,28,28,.38); }
+    .cta-btn.primary:hover { box-shadow: 0 14px 32px rgba(75,42,173,.38); background: var(--purple-lt); }
     .cta-btn.secondary {
-      background: var(--ink);
+      background: var(--navy);
       color: #fff;
-      box-shadow: 0 10px 28px rgba(13,17,23,.22);
+      box-shadow: 0 8px 24px rgba(15,27,45,.22);
     }
-    .cta-btn.secondary:hover { box-shadow: 0 16px 36px rgba(13,17,23,.32); }
+    .cta-btn.secondary:hover { box-shadow: 0 14px 32px rgba(15,27,45,.32); }
     .cta-fine {
-      font-size: .78rem;
-      color: var(--muted);
-      margin-top: 14px;
-      line-height: 1.6;
+      font-size: .76rem;
+      color: var(--gray-400);
+      margin-top: 13px;
+      line-height: 1.65;
       text-align: center;
     }
  
-    /* ─── SIDEBAR ─── */
+    /* ─────────────────────────────────────
+       SIDEBAR
+    ───────────────────────────────────── */
     .sidebar { display: flex; flex-direction: column; gap: 16px; }
  
     .side-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 22px;
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 20px;
       box-shadow: var(--shadow-sm);
     }
     .side-card-title {
-      font-size: .78rem;
+      font-size: .74rem;
       font-weight: 800;
       letter-spacing: .8px;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--gray-400);
       margin-bottom: 14px;
     }
+ 
     .info-item {
       display: flex;
-      gap: 12px;
-      margin-bottom: 16px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border);
+      gap: 11px;
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--gray-100);
     }
     .info-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
     .info-icon {
       width: 36px; height: 36px;
-      border-radius: 10px;
-      background: var(--warm);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border-radius: var(--radius);
+      background: var(--purple-pale);
+      display: flex; align-items: center; justify-content: center;
       font-size: 16px;
       flex-shrink: 0;
     }
-    .info-text strong { display: block; font-size: .88rem; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
-    .info-text p { font-size: .82rem; color: var(--muted); line-height: 1.55; margin: 0; }
+    .info-text strong { display: block; font-size: .86rem; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .info-text p { font-size: .8rem; color: var(--gray-500); line-height: 1.55; margin: 0; }
  
     .example-card {
-      background: var(--warm);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 16px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 15px;
     }
     .example-row {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
-      font-size: .83rem;
+      gap: 9px;
+      font-size: .82rem;
       margin-bottom: 10px;
       line-height: 1.5;
+      color: var(--gray-600);
     }
     .example-row:last-child { margin-bottom: 0; }
-    .ex-arrow { color: var(--red); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+    .ex-arrow { color: var(--purple); font-weight: 800; flex-shrink: 0; }
  
     .urgency-card {
-      background: linear-gradient(135deg, var(--ink) 0%, #1a1008 100%);
-      border-radius: 20px;
-      padding: 22px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--purple-dk) 100%);
+      border-radius: var(--radius-lg);
+      padding: 20px;
       color: #fff;
     }
     .urgency-card h4 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #fbbf24;
-      margin-bottom: 10px;
+      font-family: 'Merriweather', serif;
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: #c4b5fd;
+      margin-bottom: 9px;
     }
     .urgency-card p {
-      font-size: .85rem;
-      color: rgba(255,255,255,.65);
+      font-size: .83rem;
+      color: rgba(255,255,255,.62);
       line-height: 1.65;
       margin: 0;
     }
-    .urgency-card .urgency-points {
-      margin: 12px 0 0;
+    .urgency-points {
+      margin: 11px 0 0;
       padding: 0;
       list-style: none;
     }
-    .urgency-card .urgency-points li {
-      font-size: .83rem;
-      color: rgba(255,255,255,.7);
-      padding: 5px 0;
-      border-top: 1px solid rgba(255,255,255,.07);
+    .urgency-points li {
+      font-size: .82rem;
+      color: rgba(255,255,255,.68);
+      padding: 6px 0;
+      border-top: 1px solid rgba(255,255,255,.08);
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    .urgency-card .urgency-points li::before { content: '→'; color: #fbbf24; font-weight: 700; }
+    .urgency-points li::before { content: '→'; color: #c4b5fd; font-weight: 700; }
  
-    /* ─── FOOTER ─── */
+    .side-muted {
+      background: var(--gray-50);
+      border-color: var(--gray-200);
+    }
+    .side-muted p {
+      font-size: .82rem;
+      color: var(--gray-500);
+      line-height: 1.65;
+      margin: 0;
+    }
+ 
+    /* ─────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────── */
     .site-footer {
-      background: var(--ink);
-      padding: 24px;
+      background: var(--navy);
+      padding: 22px 24px;
       text-align: center;
-      color: rgba(255,255,255,.3);
-      font-size: .8rem;
-      border-top: 1px solid rgba(255,255,255,.05);
+      border-top: 3px solid var(--purple);
     }
-    .site-footer a { color: rgba(255,255,255,.4); text-decoration: none; }
- 
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 960px) {
-      .page-body { grid-template-columns: 1fr; }
-      .sidebar { order: -1; display: grid; grid-template-columns: 1fr 1fr; }
+    .site-footer p {
+      color: rgba(255,255,255,.35);
+      font-size: .78rem;
+      line-height: 1.8;
     }
-    @media (max-width: 680px) {
-      .hero { padding: 44px 20px 40px; }
-      .form-body { padding: 22px; }
-      .form-card-head { padding: 22px; }
-      .submit-wrap { padding: 18px 22px 24px; }
-      .result-body { padding: 20px; }
-      .insight-grid { grid-template-columns: 1fr; }
-      .cta-buttons { grid-template-columns: 1fr; }
-      .radio-grid.four { grid-template-columns: 1fr 1fr; }
-      .radio-grid.three { grid-template-columns: 1fr 1fr; }
-      .sidebar { grid-template-columns: 1fr; }
-      .hero-stats { gap: 16px; }
-    }
+    .site-footer a { color: #a78bfa; text-decoration: none; }
   </style>
 </head>
 <body>
  
-  <!-- ANNOUNCEMENT BAR -->
-  <div class="ann-bar">
+  <!-- PROMO BAR -->
+  <div class="promo-bar">
     ⚠️ Most people lose leverage because they wait — or pick the wrong path.
     <a href="#form-start">Find your path now →</a>
   </div>
@@ -770,27 +827,30 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="https://easylegalfiling.com" target="_blank">
-        <img src="logo.png" alt="Easy Legal Filing" onerror="this.style.display='none'">
+        <img src="logo.png" alt="EasyLegalFiling" onerror="this.style.display='none'">
         <div>
-          <div class="brand-name">Easy Legal Filing</div>
+          <div class="brand-name">EasyLegalFiling</div>
           <div class="brand-tag">Attorney-Designed Filing Systems</div>
         </div>
       </a>
-      <div class="header-badge">🔒 Free · New York Only</div>
+      <div class="header-chips">
+        <span class="hchip">🔒 Free Tool</span>
+        <span class="hchip">⚖️ New York Only</span>
+      </div>
     </div>
   </header>
  
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-eyebrow">Free New York Inheritance Rights Tool</div>
+      <div class="hero-eyebrow">⚖️ Free New York Inheritance Rights Tool</div>
       <h1>You may be entitled to money<br><em>you haven't received yet.</em></h1>
       <p class="hero-sub">Answer 12 short questions and find out whether you have inheritance rights in New York, which estate path applies, and whether you need to act before someone else takes control.</p>
-      <div class="hero-stats">
-        <div class="stat"><div class="stat-dot"></div>New York estates only</div>
-        <div class="stat"><div class="stat-dot"></div>No login or email required</div>
-        <div class="stat"><div class="stat-dot"></div>Takes under 3 minutes</div>
-        <div class="stat"><div class="stat-dot"></div>Probate · Administration · Small Estate · Claim Your Share</div>
+      <div class="hero-pills">
+        <div class="hero-pill"><span class="hero-pill-dot"></span>New York estates only</div>
+        <div class="hero-pill"><span class="hero-pill-dot"></span>No login or email required</div>
+        <div class="hero-pill"><span class="hero-pill-dot"></span>Under 3 minutes</div>
+        <div class="hero-pill"><span class="hero-pill-dot"></span>Probate · Administration · Small Estate · Claim Your Share</div>
       </div>
     </div>
   </section>
@@ -800,8 +860,8 @@
     <div class="trust-inner">
       <div class="trust-item">⚖️ Attorney-Designed Questions</div>
       <div class="trust-item">📋 Routes You to the Correct NY Path</div>
-      <div class="trust-item">🚨 Flags Urgency & Red Flags Instantly</div>
-      <div class="trust-item">💰 Free — No Credit Card</div>
+      <div class="trust-item">🚨 Flags Urgency &amp; Red Flags Instantly</div>
+      <div class="trust-item">💰 100% Free — No Credit Card</div>
     </div>
   </div>
  
@@ -812,7 +872,7 @@
     <main>
       <div class="form-card">
         <div class="form-card-head">
-          <div class="step-badge">Step 1 of 1 — Free Diagnostic</div>
+          <div class="step-label">Step 1 of 1 — Free Diagnostic</div>
           <h2>Find your likely inheritance path</h2>
           <p>This tool identifies your most likely New York estate route and flags any red flags — exclusions, timing issues, or someone else moving first.</p>
         </div>
@@ -990,12 +1050,12 @@
  
         <!-- RESULT -->
         <div id="result" class="result-section" aria-live="polite">
-          <div style="padding: 0 32px 32px;">
+          <div style="padding: 0 30px 30px;">
             <div class="result-card">
               <div class="result-head">
-                <div class="result-head-label">🔍 Your Diagnosis</div>
+                <div class="result-eyebrow">🔍 Your Diagnosis</div>
                 <h2 id="resultTitle">Your likely path</h2>
-                <div class="result-head-sub" id="resultSubtitle"></div>
+                <div class="result-subtitle" id="resultSubtitle"></div>
               </div>
               <div class="result-body">
                 <div id="resultUrgency" class="alert-box danger"><span class="alert-icon">🚨</span><span id="resultUrgencyText"></span></div>
@@ -1021,10 +1081,10 @@
                   <p>This free tool is your diagnosis. The next step is the correct paid path for your specific situation — attorney-designed and built for New York.</p>
                   <div class="cta-buttons">
                     <a class="cta-btn primary" id="claimLink" href="https://easydivorcefiling.gavel.io/portal/bundles/f43856a4-c2b5-47ef-bd49-b265fa666d92" target="_blank" rel="noopener">
-                      Claim My Share<br><small style="font-weight:500;font-size:.8rem;opacity:.85">· $149 ·</small>
+                      Claim My Share<br><small style="font-weight:500;font-size:.78rem;opacity:.85">· $149 ·</small>
                     </a>
                     <a class="cta-btn secondary" id="startLink" href="https://easydivorcefiling.gavel.io/portal/bundles/f43856a4-c2b5-47ef-bd49-b265fa666d92" target="_blank" rel="noopener">
-                      Start Estate Correctly<br><small style="font-weight:500;font-size:.8rem;opacity:.85">· $149 ·</small>
+                      Start Estate Correctly<br><small style="font-weight:500;font-size:.78rem;opacity:.85">· $149 ·</small>
                     </a>
                   </div>
                   <div class="cta-fine" id="ctaFine"></div>
@@ -1070,7 +1130,7 @@
         <div class="info-item">
           <div class="info-icon">🚨</div>
           <div class="info-text">
-            <strong>Spouse & Heir Rights</strong>
+            <strong>Spouse &amp; Heir Rights</strong>
             <p>Catches when a spouse or child may have been left out or shortchanged.</p>
           </div>
         </div>
@@ -1093,11 +1153,9 @@
         </div>
       </div>
  
-      <div class="side-card" style="background:var(--warm);">
+      <div class="side-card side-muted">
         <div class="side-card-title">What this tool does NOT do</div>
-        <p style="font-size:.85rem;color:var(--muted);line-height:1.65;margin:0;">
-          It does not decide every asset issue, objection, or non-probate transfer. It is a New York routing and urgency diagnostic — your starting point, not your final answer.
-        </p>
+        <p>It does not decide every asset issue, objection, or non-probate transfer. It is a New York routing and urgency diagnostic — your starting point, not your final answer.</p>
       </div>
  
     </aside>
@@ -1136,7 +1194,7 @@
     }
     function setTags(items) {
       tagRow.innerHTML = items.map(t =>
-        `<span class="pill${t.red?' red':''}">${t.text}</span>`
+        `<span class="pill${t.red ? ' red' : ''}">${t.text}</span>`
       ).join('');
     }
     function showAlert(box, textEl, text) {
@@ -1145,7 +1203,7 @@
     }
  
     function decidePath(d) {
-      let title, subtitle, urgency, warning='', success='', primaryCTA='both', fine;
+      let title, subtitle, urgency, warning = '', success = '', primaryCTA = 'both', fine;
       const tags = [], meaning = [], next = [];
  
       const redFlags =
@@ -1154,27 +1212,27 @@
         d.issues === 'excluded' || d.issues === 'service' || d.issues === 'moneyHeld' ||
         (d.relationship === 'spouse' && d.willStatus === 'yes' && d.leftOutStatus !== 'named');
  
-      const probSmall  = d.under50 === 'yes' && d.soloRealEstate === 'no' && d.lawsuit !== 'yes';
-      const probProb   = d.willStatus === 'yes' && !probSmall;
-      const probAdmin  = (d.willStatus === 'no' || d.willStatus === 'unknown') && !probSmall;
+      const probSmall = d.under50 === 'yes' && d.soloRealEstate === 'no' && d.lawsuit !== 'yes';
+      const probProb  = d.willStatus === 'yes' && !probSmall;
+      const probAdmin = (d.willStatus === 'no' || d.willStatus === 'unknown') && !probSmall;
       const spouseClaim = d.relationship === 'spouse' &&
         (d.leftOutStatus === 'leftOut' || d.leftOutStatus === 'less' || d.goal === 'claim' || d.goal === 'both');
  
-      urgency = 'You may be entitled to money you haven\'t received. Waiting can make it easier for someone else to control the estate first.';
+      urgency = "You may be entitled to money you haven't received. Waiting can make it easier for someone else to control the estate first.";
  
       if (probSmall) {
         title    = 'This may be a Small Estate in New York';
         subtitle = `Your answers suggest this may fit the voluntary administration route rather than a full probate or administration case. County: ${d.county}.`;
         tags.push({text:'Possible Small Estate'},{text:'Under $50K Personal Property'},{text:'No Solo Real Estate Reported'});
         meaning.push(
-          'Small-estate treatment is for estates with less than $50,000 in personal property.',
-          'If there is real estate in the decedent\'s name alone, this usually points away from the small-estate route.',
-          'If there is a will, the original will still matters and may need to be submitted with the small-estate filing.'
+          "Small-estate treatment is for estates with less than $50,000 in personal property.",
+          "If there is real estate in the decedent's name alone, this usually points away from the small-estate route.",
+          "If there is a will, the original will still matters and may need to be submitted with the small-estate filing."
         );
         next.push(
-          'Confirm there is no house or land in the decedent\'s name alone.',
-          'Make a clean list of all personal-property assets and their approximate values.',
-          'If a lawsuit or hidden asset may exist, do not assume small estate is the correct route.'
+          "Confirm there is no house or land in the decedent's name alone.",
+          "Make a clean list of all personal-property assets and their approximate values.",
+          "If a lawsuit or hidden asset may exist, do not assume small estate is the correct route."
         );
         success = 'This may be a faster and simpler path if the facts are clean and the estate truly qualifies.';
         primaryCTA = d.goal === 'claim' ? 'claim' : 'start';
@@ -1184,14 +1242,14 @@
         subtitle = `Your answers suggest there is a will — the estate likely needs the probate route. County: ${d.county}.`;
         tags.push({text:'Likely Probate'},{text:'Will Reported'});
         meaning.push(
-          'When there is a will, it generally must be filed and admitted before the estate is handled.',
-          'The court will need the correct petitioner, death certificate, and all interested parties identified.',
-          'Who gets notice can matter almost as much as who gets assets.'
+          "When there is a will, it generally must be filed and admitted before the estate is handled.",
+          "The court will need the correct petitioner, death certificate, and all interested parties identified.",
+          "Who gets notice can matter almost as much as who gets assets."
         );
         next.push(
-          'Make sure the original will is secure and has not been altered.',
-          'Identify all distributees and parties affected by the will before anything is filed.',
-          'If someone already filed or is holding the original will, acting quickly may matter.'
+          "Make sure the original will is secure and has not been altered.",
+          "Identify all distributees and parties affected by the will before anything is filed.",
+          "If someone already filed or is holding the original will, acting quickly may matter."
         );
         primaryCTA = redFlags || d.goal === 'claim' ? 'claim' : 'start';
         if (spouseClaim) warning = 'You reported a spouse issue. Even with a will, a spouse may still have been cut out or underprotected — the claim-your-share path may need to be reviewed immediately.';
@@ -1202,14 +1260,14 @@
         subtitle = `Your answers suggest there may be no will — pointing to letters of administration rather than probate. County: ${d.county}.`;
         tags.push({text:'Likely Administration'},{text:'No Will or Will Unknown'});
         meaning.push(
-          'When there is no will, the likely route is administration — a qualified distributee asks the court for authority.',
-          'Priority among family members can matter for who files first.',
-          'The estate still requires correct family information, asset information, and notice to all necessary parties.'
+          "When there is no will, the likely route is administration — a qualified distributee asks the court for authority.",
+          "Priority among family members can matter for who files first.",
+          "The estate still requires correct family information, asset information, and notice to all necessary parties."
         );
         next.push(
-          'List the closest surviving distributees clearly and completely.',
-          'Gather the death certificate, asset list, and debts or funeral expenses.',
-          'If another family member may file first, delay can weaken your position significantly.'
+          "List the closest surviving distributees clearly and completely.",
+          "Gather the death certificate, asset list, and debts or funeral expenses.",
+          "If another family member may file first, delay can weaken your position significantly."
         );
         primaryCTA = redFlags || d.goal === 'claim' ? 'claim' : 'start';
         if (redFlags) warning = 'This may not be just a filing issue. Your answers suggest a possible fight over who controls the estate or who receives notice or money.';
@@ -1218,7 +1276,7 @@
  
       if (spouseClaim) {
         tags.push({text:'⚠️ Possible Spouse Rights Issue', red: true});
-        urgency = 'You may be entitled to money you haven\'t received. A spouse who was left out or shortchanged should not assume the will ends the story.';
+        urgency = "You may be entitled to money you haven't received. A spouse who was left out or shortchanged should not assume the will ends the story.";
       }
       if ((d.relationship === 'child' || d.relationship === 'grandchild') && redFlags)
         tags.push({text:'⚠️ Possible Heir Rights Issue', red: true});
@@ -1248,19 +1306,19 @@
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       const data = {
-        willStatus:    getRadio('willStatus'),
-        relationship:  document.getElementById('relationship').value,
-        goal:          document.getElementById('goal').value,
-        leftOutStatus: getRadio('leftOutStatus'),
-        married:       getRadio('married'),
-        children:      getRadio('children'),
-        soloRealEstate:getRadio('soloRealEstate'),
-        under50:       getRadio('under50'),
-        lawsuit:       getRadio('lawsuit'),
-        alreadyFiled:  getRadio('alreadyFiled'),
-        issues:        document.getElementById('issues').value,
-        county:        document.getElementById('county').value.trim(),
-        details:       document.getElementById('details').value.trim()
+        willStatus:     getRadio('willStatus'),
+        relationship:   document.getElementById('relationship').value,
+        goal:           document.getElementById('goal').value,
+        leftOutStatus:  getRadio('leftOutStatus'),
+        married:        getRadio('married'),
+        children:       getRadio('children'),
+        soloRealEstate: getRadio('soloRealEstate'),
+        under50:        getRadio('under50'),
+        lawsuit:        getRadio('lawsuit'),
+        alreadyFiled:   getRadio('alreadyFiled'),
+        issues:         document.getElementById('issues').value,
+        county:         document.getElementById('county').value.trim(),
+        details:        document.getElementById('details').value.trim()
       };
  
       const r = decidePath(data);
@@ -1275,15 +1333,14 @@
       setList(nextList, r.next);
       ctaFine.textContent = r.fine;
  
-      // Highlight recommended CTA
-      claimLink.style.opacity = '1';
-      startLink.style.opacity = '1';
+      claimLink.style.opacity   = '1';
+      startLink.style.opacity   = '1';
       claimLink.style.transform = 'none';
       startLink.style.transform = 'none';
       if (r.primaryCTA === 'claim') {
-        startLink.style.opacity = '.6';
+        startLink.style.opacity = '.55';
       } else if (r.primaryCTA === 'start') {
-        claimLink.style.opacity = '.6';
+        claimLink.style.opacity = '.55';
       }
  
       resultSec.classList.add('show');
@@ -1298,4 +1355,3 @@
   </script>
 </body>
 </html>
-
